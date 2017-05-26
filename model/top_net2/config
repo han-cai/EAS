@@ -1,0 +1,408 @@
+{
+	"batch_size": 64,
+	"train_full": true,
+	"epochs": 300,
+	"training_loop": 70,
+	"validation_loop": 3500,
+	"scheme": "DENSENET",
+	"reg_type": "sum",
+	"image_size": 32,
+	"layers": [
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 192,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 128,
+				"kernel_size": 5,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 256,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 128,
+				"kernel_size": 5,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": null,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 128,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Pool",
+			{
+				"keep_prob": 0.7,
+				"pool_size": 2,
+				"strides": 2,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": null,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 256,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 384,
+				"kernel_size": 5,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": null,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 256,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 256,
+				"kernel_size": 5,
+				"padding": "same"
+			}
+		],
+		[
+			"Pool",
+			{
+				"keep_prob": 0.7,
+				"pool_size": 2,
+				"strides": 2,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 384,
+				"kernel_size": 5,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 384,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": null,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 256,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 256,
+				"kernel_size": 5,
+				"padding": "same"
+			}
+		],
+		[
+			"Pool",
+			{
+				"keep_prob": 0.7,
+				"pool_size": 2,
+				"strides": 2,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": 1,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 384,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Conv",
+			{
+				"keep_prob": null,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"filters": 256,
+				"kernel_size": 3,
+				"padding": "same"
+			}
+		],
+		[
+			"Flatten",
+			{
+				"keep_prob": null
+			}
+		],
+		[
+			"Dense",
+			{
+				"keep_prob": 0.5,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"units": 1024
+			}
+		],
+		[
+			"Dense",
+			{
+				"keep_prob": 0.5,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": "relu",
+				"use_bn": true,
+				"init_bias": 0,
+				"units": 256
+			}
+		],
+		[
+			"Dense",
+			{
+				"keep_prob": null,
+				"stddev": [
+					"hekaiming",
+					{}
+				],
+				"weight_decay": [
+					"l2",
+					0.0001
+				],
+				"activation": null,
+				"use_bn": false,
+				"init_bias": 0,
+				"units": 10
+			}
+		]
+	],
+	"minimize": [
+		"momentum",
+		0.001,
+		{
+			"momentum": 0.9,
+			"use_nesterov": true
+		},
+		["piecewise", {"boundaries": [105000, 157500], "values": [0.025, 0.005, 0.001]}]
+	]
+}
