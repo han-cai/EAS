@@ -1,39 +1,28 @@
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+from expdir_monitor.expdir_monitor import ExpdirMonitor
+import argparse
 
-import json, argparse
-import numpy as np, tensorflow as tf
-from util.config import *
-from environment.monitor import ExpdirMonitor
-from util.exdir import ExperimentDirectory
 
-def get_args():
-	parser = argparse.ArgumentParser()
-	parser.add_argument("expdir", type=str)
-	parser.add_argument("--restore", action="store_true")
-	parser.add_argument("--test", action="store_true")
-	parser.add_argument("dataset", type=str, default="cifar10")
-	return parser.parse_args()
-
-def run(expdir, restore=False, mode="train", dataset="cifar10"):
-	expdir_monitor = ExpdirMonitor(expdir, restore, dataset)
-	if mode == "train":
-		expdir_monitor.run()
-		return expdir_monitor
-	elif mode == "test":
-		result = expdir_monitor.test()
-		print("test acc: {}".format(*result))
-		return result
-	elif mode == "pure_train":
-		expdir_monitor.pure_train()
-
-def main():
-	args = get_args()
-	expdir = ExperimentDirectory(args.expdir, args.restore)
-	run(expdir, args.restore, "test" if args.test else "train", dataset=args.dataset)
-
-if __name__ == "__main__":
-	try:
-		main()
-	except KeyboardInterrupt:
-		pass
+"""
+Given a expdir, run the exp
+"""
+parser = argparse.ArgumentParser()
+parser.add_argument(
+	'--test', action='store_true',
+	help='Test model for required dataset if pretrained model exists.'
+)
+parser.add_argument(
+	'--valid', action='store_true',
+)
+parser.add_argument(
+	'--valid_size', type=int, default=-1,
+)
+parser.add_argument('--path', type=str)
+parser.add_argument('--restore', action='store_true')
+args = parser.parse_args()
+expdir_monitor = ExpdirMonitor(args.path)
+test_performance = expdir_monitor.run(pure=False, restore=args.restore, test=args.test, valid=args.valid,
+                                      valid_size=args.valid_size)
+if args.valid:
+	print('validation performance: %s' % test_performance)
+else:
+	print('test performance: %s' % test_performance)

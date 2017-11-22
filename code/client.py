@@ -1,17 +1,26 @@
+"""
+The file to run in the client side
+Train the network and return the validation performance
+"""
 import os
+from expdir_monitor.expdir_monitor import ExpdirMonitor
+import time
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-from environment.monitor import ExpdirMonitor
-from util.exdir import ExperimentDirectory
 
 def run(expdir):
+	start_time = time.time()
 	expdir_monitor = ExpdirMonitor(expdir)
-	net_val = expdir_monitor.pure_train(valid="valid")
-	print(net_val)
+	valid_performance = expdir_monitor.run(pure=True, restore=False)
+	end_time = time.time()
+	print('running time: %s' % (end_time - start_time))
+	print('valid performance: %s' % valid_performance)
+
 
 def main():
-	expdir = ExperimentDirectory(input().strip('\n'))
+	expdir = input().strip('\n')
 	run(expdir)
+
 
 if __name__ == "__main__":
 	try:

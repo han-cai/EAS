@@ -1,0 +1,5 @@
+[
+	["<client 1 address>", <gpu_id_0>, "<path to the **code** folder on client 1>/client.py"],
+	["<client 2 address>", <gpu_id_0>, "<path to the **code** folder on client 2>/client.py"],
+	["<client 2 address>", <gpu_id_1>, "<path to the **code** folder on client 2>/client.py"]
+]
