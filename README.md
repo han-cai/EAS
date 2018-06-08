@@ -1,6 +1,19 @@
 # Efficient Architecture Search by Network Transformation
 
-Code for the paper [Efficient Architecture Search by Network Transformation](https://arxiv.org/abs/1707.04873) in AAAI-18. 
+Code for the paper [Efficient Architecture Search by Network Transformation](https://arxiv.org/abs/1707.04873) in AAAI 2018. 
+
+## Reference
+```bash
+@inproceedings{cai2018efficient,
+  title={Efficient Architecture Search by Network Transformation},
+  author={Cai, Han and Chen, Tianyao and Zhang, Weinan and Yu, Yong and Wang, Jun},
+  booktitle={AAAI},
+  year={2018}
+}
+```
+
+## Related Projects
+- [Path-Level Network Transformation for Efficient Architecture Search](https://arxiv.org/abs/1806.02639), in ICML 2018. [Code](https://github.com/han-cai/PathLevel-EAS).
 
 ## Dependencies
 
@@ -35,12 +48,3 @@ test performance: 0.9577
 ## Acknowledgement
 The DenseNet part of this code is based on the [repository by Illarion](https://github.com/ikhlestov/vision_networks). Many thanks to [Illarion](https://github.com/ikhlestov). 
 
-## Reference
-```bash
-@article{cai2017reinforcement,
-  title={Reinforcement Learning for Architecture Search by Network Transformation},
-  author={Cai, Han and Chen, Tianyao and Zhang, Weinan and Yu, Yong and Wang, Jun},
-  journal={arXiv preprint arXiv:1707.04873},
-  year={2017}
-}
-```
