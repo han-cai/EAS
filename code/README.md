@@ -23,7 +23,7 @@ python3 arch_search.py --setting=convnet
 When a remote GPU, e.g. GPU_0 on client 1, is chosen 
 by the server, the following command is executed
 ```bash
-ssh <client 1 address> CUDA_VISIBLE_DEVICES=0 python3 <path to the **code** folder on client 1>/client.py 
+ssh <client 1 address> CUDA_VISIBLE_DEVICES=<gpu_id_0> python3 <path to the **code** folder on client 1>/client.py 
 ```
 Make sure that
 - you can visit each client via **ssh** without password on the server side. 
