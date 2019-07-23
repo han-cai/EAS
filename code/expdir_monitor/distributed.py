@@ -139,6 +139,7 @@ class RemoteController:
 			self._on_running = [idx, expdir]
 			thr = Thread(target=self.remote_executer, args=(idx, expdir, queue))
 			thr.start()
+			thr.join()
 			self._on_running = None
 
 
